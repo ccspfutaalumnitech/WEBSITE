@@ -11,7 +11,7 @@ export default function ContactPageClient() {
 
       <section className="relative w-full h-64 md:h-80 overflow-hidden">
         <img
-          src="/church-members-in-white-garments.jpg"
+          src="/10.jpg"
           alt="Church members in worship"
           className="w-full h-full object-cover"
         />
@@ -65,7 +65,7 @@ export default function ContactPageClient() {
 
       <section className="relative w-full">
         <img
-          src="/church-members-praying-together.jpg"
+          src="/11.jpg"
           alt="Church members in testimony"
           className="w-full h-64 md:h-80 object-cover"
         />

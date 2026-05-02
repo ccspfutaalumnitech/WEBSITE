@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="mb-16">
           <div className="relative h-96 md:h-[500px] rounded-2xl overflow-hidden border-4 border-blue-500">
             <img
-              src="/images/church-20image.png"
+              src="/images/Church Image.png"
               alt="Celestial Church of Christ Student Parish Building"
               className="w-full h-full object-cover"
             />
@@ -130,7 +130,7 @@ option as last resort.
           </div>
           <div className="h-72 rounded-lg overflow-hidden">
             <img
-              src="/outdoor-gathering-of-church-members-in-nature.jpg"
+              src="/CCC-141.jpg"
               alt="Church Gathering"
               className="w-full h-full object-cover"
             />
@@ -140,7 +140,7 @@ option as last resort.
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="h-72 rounded-lg overflow-hidden">
             <img
-              src="/modern-church-building-entrance-with-community.jpg"
+              src="/CCC-142.jpg"
               alt="Church Building Entrance"
               className="w-full h-full object-cover"
             />

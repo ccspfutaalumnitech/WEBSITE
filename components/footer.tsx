@@ -44,7 +44,7 @@ export default function Footer() {
             <motion.div className="flex items-center gap-2 mb-4" whileHover={{ scale: 1.05 }}>
               <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
                     <img
-              src="CeleFuta Logo (thin border).png"
+              src="logo.png"
               alt="Church Congregation"
               className="w-full h-full object-cover"
             />

@@ -69,7 +69,7 @@ export default function Navigation() {
                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                  <img
-              src="CeleFuta Logo (thin border).png"
+              src="logo.png"
               alt="Church Congregation"
               className="w-full h-full object-cover"
             />

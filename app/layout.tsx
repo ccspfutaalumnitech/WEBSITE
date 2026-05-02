@@ -14,19 +14,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/icon-light-32x32.png",
+        url: "/public/WhatsApp Image 2025-11-05 at 07.55.21_cf28b6cf.png",
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/icon-dark-32x32.png",
+        url: "/public/WhatsApp Image 2025-11-05 at 07.55.21_cf28b6cf.png",
         media: "(prefers-color-scheme: dark)",
       },
       {
-        url: "/icon.svg",
+        url: "/public/WhatsApp Image 2025-11-05 at 07.55.21_cf28b6cf.png",
         type: "image/svg+xml",
       },
     ],
-    apple: "/apple-icon.png",
+    apple: "/public/WhatsApp Image 2025-11-05 at 07.55.21_cf28b6cf.png",
   },
 }
 

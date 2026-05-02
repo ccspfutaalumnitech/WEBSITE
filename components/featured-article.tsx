@@ -104,14 +104,14 @@ duly recognized as a bonafide religious group in the campus.
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <img src="/images/1.jpg" alt="Church fellowship" className="w-full h-full object-cover" />
+                <img src="/d1.jpg" alt="Church fellowship" className="w-full h-full object-cover" />
               </motion.div>
               <motion.div
                 className="relative h-48 lg:h-56 rounded-lg overflow-hidden shadow-lg"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <img src="/images/c2.jpg" alt="Church member praying" className="w-full h-full object-cover" />
+                <img src="/d2.jpg" alt="Church member praying" className="w-full h-full object-cover" />
               </motion.div>
             </motion.div>
           </motion.div>

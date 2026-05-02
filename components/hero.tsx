@@ -8,7 +8,7 @@ import Link from "next/link"
 export default function Hero() {
   const [activeSlide, setActiveSlide] = useState(0)
 
-  const slides = ["/images/2.jpg", "/images/c3.jpg", "/images/5.jpg", "/images/1.jpg", "/images/4.jpg", "/images/6.jpg"]
+  const slides = ["/2.jpg", "/3.jpg", "/5.jpg", "/1.jpg", "/4.jpg", "/6.jpg"]
 
   useEffect(() => {
     const timer = setInterval(() => {
