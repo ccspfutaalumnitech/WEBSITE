@@ -1,23 +1,24 @@
 'use client'
 
+import { useState } from 'react'
 import Navigation from '@/components/navigation'
 import Footer from '@/components/footer'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
+import { X } from 'lucide-react'
 
 export default function GalleryPageClient() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+
   const galleryItems = [
-    { id: 1, title: 'Fellowship Moments' },
-    { id: 2, title: 'Worship Service' },
-    { id: 3, title: 'Community Prayer' },
-    { id: 4, title: 'Church Members' },
-    { id: 5, title: 'Celebration' },
-    { id: 6, title: 'Gathering' },
-    { id: 7, title: 'Song Service' },
-    { id: 8, title: 'Testimony' },
-    { id: 9, title: 'Together in Faith' },
-    { id: 10, title: 'Rejoicing' },
-    { id: 11, title: 'Devotion' },
-    { id: 12, title: 'Community' },
+    { id: 1, image: '/images/member-1.jpg', title: 'Church Member' },
+    { id: 2, image: '/images/member-2.jpg', title: 'In Worship' },
+    { id: 3, image: '/images/member-3.jpg', title: 'Devoted' },
+    { id: 4, image: '/images/member-4.jpg', title: 'Celebrating' },
+    { id: 5, image: '/images/member-5.jpg', title: 'Joyful' },
+    { id: 6, image: '/images/member-6.jpg', title: 'Peaceful' },
+    { id: 7, image: '/images/member-7.jpg', title: 'Engaged' },
+    { id: 8, image: '/images/member-8.jpg', title: 'Praying' },
+    { id: 9, image: '/images/member-9.jpg', title: 'Community' },
   ]
 
   return (
@@ -52,20 +53,61 @@ export default function GalleryPageClient() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {galleryItems.map((item, index) => (
-              <motion.div
+              <motion.button
                 key={item.id}
-                className="aspect-square bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex items-center justify-center"
+                onClick={() => setSelectedImage(item.image)}
+                className="aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group relative"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <p className="text-center text-gray-600 font-medium px-4">{item.title}</p>
-              </motion.div>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:brightness-75 transition-all duration-300"
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
+                  <span className="text-white text-sm font-semibold">Click to View</span>
+                </div>
+              </motion.button>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              className="relative max-w-2xl w-full h-96 sm:h-[600px] md:h-[700px]"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={selectedImage}
+                alt="Full size"
+                className="w-full h-full object-contain rounded-lg"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute -top-10 -right-10 text-white hover:text-gray-300 transition-colors"
+              >
+                <X size={32} />
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <Footer />
     </motion.main>
