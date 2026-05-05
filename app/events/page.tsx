@@ -14,6 +14,7 @@ interface Event {
   description: string
   theme?: string
   isFeatured?: boolean
+  image: string
 }
 
 export default function EventsPage() {
@@ -27,6 +28,7 @@ export default function EventsPage() {
         "Archbearers of Truth - Deuteronomy 6:4-7. A gathering focused on strengthening the father figure in our community. Join us for an impactful session on family values and spiritual leadership.",
       theme: "Father-hood",
       isFeatured: true,
+      image: "/images/event-fatherhood.jpg",
     },
     {
       id: 2,
@@ -34,7 +36,8 @@ export default function EventsPage() {
       date: "Coming Soon",
       time: "TBA",
       description:
-        "Vivant unde background hit best pixel rectangle pencil effect vector. Plugin outline distribute content cubic. Clip ellipse blur stop pen home asset rotate content cubic line edit layout export bullet reseizing line content floating shadow.",
+        "A transformative gathering bringing brothers and sisters together for spiritual growth, fellowship, and strengthening community bonds through shared worship and meaningful discussions.",
+      image: "/images/event-sisters-summit.jpg",
     },
     {
       id: 3,
@@ -42,7 +45,8 @@ export default function EventsPage() {
       date: "Coming Soon",
       time: "TBA",
       description:
-        "Vivant unde background hit best pixel rectangle pencil effect vector. Plugin outline distribute content cubic. Clip ellipse blur stop pen home asset rotate content cubic line edit layout export bullet reseizing line content floating shadow.",
+        "An exclusive weekend retreat for our sisters to celebrate their spiritual journey, share testimonies, and deepen their connection with God and one another.",
+      image: "/images/event-sisters-weekend.jpg",
     },
     {
       id: 4,
@@ -50,7 +54,8 @@ export default function EventsPage() {
       date: "Coming Soon",
       time: "TBA",
       description:
-        "Vivant unde background hit best pixel rectangle pencil effect vector. Plugin outline distribute content cubic. Clip ellipse blur stop pen home asset rotate content cubic line edit layout export bullet reseizing line content floating shadow.",
+        "Join us in celebrating our church's milestone anniversary with special thanksgiving services, testimonies of God's grace, and memorable fellowship.",
+      image: "/images/event-anniversary.jpg",
     },
     {
       id: 5,
@@ -58,7 +63,8 @@ export default function EventsPage() {
       date: "Coming Soon",
       time: "TBA",
       description:
-        "Vivant unde background hit best pixel rectangle pencil effect vector. Plugin outline distribute content cubic. Clip ellipse blur stop pen home asset rotate content cubic line edit layout export bullet reseizing line content floating shadow.",
+        "A spiritual getaway designed for prayer, meditation, and renewal. Disconnect from the world and reconnect with your faith in a peaceful setting.",
+      image: "/images/event-retreat.jpg",
     },
     {
       id: 6,
@@ -66,7 +72,8 @@ export default function EventsPage() {
       date: "Coming Soon",
       time: "TBA",
       description:
-        "Vivant unde background hit best pixel rectangle pencil effect vector. Plugin outline distribute content cubic. Clip ellipse blur stop pen home asset rotate content cubic line edit layout export bullet reseizing line content floating shadow.",
+        "An inspiring conference for our brothers to grow in faith, discuss spiritual leadership, and build strong relationships within our church community.",
+      image: "/images/event-brothers-summit.jpg",
     },
   ]
 
@@ -101,8 +108,12 @@ export default function EventsPage() {
                   </div>
                   <p className="text-sm leading-relaxed">{events[0].description}</p>
                 </div>
-                <div className="w-full h-80 bg-gradient-to-br from-orange-300 to-orange-500 rounded-lg flex items-center justify-center">
-                  <span className="text-white text-xl font-semibold opacity-50">Event Image</span>
+                <div className="w-full h-80 rounded-lg overflow-hidden">
+                  <img 
+                    src={events[0].image} 
+                    alt={events[0].title}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -112,8 +123,12 @@ export default function EventsPage() {
         <div className="space-y-8">
           {events.slice(1).map((event) => (
             <div key={event.id} className="flex gap-6 pb-8 border-b border-gray-200 last:border-b-0">
-              <div className="w-40 h-40 bg-gray-300 rounded-lg flex-shrink-0 flex items-center justify-center">
-                <span className="text-gray-500 text-sm font-medium">Event Image</span>
+              <div className="w-40 h-40 rounded-lg flex-shrink-0 overflow-hidden">
+                <img 
+                  src={event.image} 
+                  alt={event.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="flex-1">
                 <h3 className="text-2xl font-bold text-navy-dark mb-2">{event.title}</h3>

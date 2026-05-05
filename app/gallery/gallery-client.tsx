@@ -10,27 +10,36 @@ export default function GalleryPageClient() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
   const galleryItems = [
-    { id: 1, image: '/images/member-1.jpg', title: 'Church Member' },
-    { id: 2, image: '/images/member-2.jpg', title: 'In Worship' },
-    { id: 3, image: '/images/member-3.jpg', title: 'Devoted' },
-    { id: 4, image: '/images/member-4.jpg', title: 'Celebrating' },
-    { id: 5, image: '/images/member-5.jpg', title: 'Joyful' },
-    { id: 6, image: '/images/member-6.jpg', title: 'Peaceful' },
-    { id: 7, image: '/images/member-7.jpg', title: 'Engaged' },
-    { id: 8, image: '/images/member-8.jpg', title: 'Praying' },
-    { id: 9, image: '/images/member-9.jpg', title: 'Community' },
+    { id: 1, image: '/d1.jpg', title: 'Church Member', span: 'col-span-1 row-span-1' },
+    { id: 2, image: '/d3.jpg', title: 'In Worship', span: 'col-span-1 row-span-2' },
+    { id: 3, image: '/3.jpg', title: 'Devoted', span: 'col-span-1 row-span-1' },
+    { id: 4, image: '/12.jpg', title: 'Celebrating', span: 'col-span-2 row-span-1' },
+    { id: 5, image: '/13.jpg', title: 'Joyful', span: 'col-span-1 row-span-1' },
+    { id: 6, image: '/6.jpg', title: 'Peaceful', span: 'col-span-1 row-span-1' },
+    { id: 7, image: '/7.jpg', title: 'Engaged', span: 'col-span-1 row-span-2' },
+    { id: 8, image: '/11.jpg', title: 'Praying', span: 'col-span-1 row-span-1' },
+    { id: 9, image: '/10.jpg', title: 'Community', span: 'col-span-2 row-span-1' },
+    { id: 8, image: '/37.jpg', title: 'Praying', span: 'col-span-1 row-span-1' },
+    { id: 9, image: '/39.jpg', title: 'Community', span: 'col-span-2 row-span-1' },
+    { id: 8, image: '/38.jpg', title: 'Praying', span: 'col-span-1 row-span-1' },
+    { id: 9, image: '/33.jpg', title: 'Community', span: 'col-span-2 row-span-1' },
+    { id: 8, image: '/32.jpg', title: 'Praying', span: 'col-span-1 row-span-1' },
+    { id: 9, image: '/30.jpg', title: 'Community', span: 'col-span-2 row-span-1' },
+    { id: 4, image: '/4.jpg', title: 'Celebrating', span: 'col-span-2 row-span-1' },
+    { id: 5, image: '/CCC-140.jpg', title: 'Joyful', span: 'col-span-1 row-span-1' },
+    { id: 6, image: '/25.jpg', title: 'Peaceful', span: 'col-span-1 row-span-1' },
   ]
 
   return (
     <motion.main
-      className="min-h-screen bg-white"
+      className="min-h-screen bg-background dark:bg-background"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <Navigation />
 
-      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-secondary/10 dark:from-primary/10 to-background dark:to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12 sm:mb-16"
@@ -38,37 +47,38 @@ export default function GalleryPageClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-navy-dark mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-4">
               Life at CCCSP FUTA
             </h1>
-            <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base">
+            <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
               Discover moments of worship, fellowship, and community life captured through our journey together
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Photo Gallery Grid */}
-      <section className="py-16 lg:py-24 bg-white">
+      {/* Photo Gallery Grid - Pinterest Style */}
+      <section className="py-16 lg:py-24 bg-background dark:bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 auto-rows-max gap-3 sm:gap-4 md:gap-5">
             {galleryItems.map((item, index) => (
               <motion.button
                 key={item.id}
                 onClick={() => setSelectedImage(item.image)}
-                className="aspect-square rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer group relative"
-                initial={{ opacity: 0, scale: 0.9 }}
+                className={`${item.span} rounded-xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 cursor-pointer group relative`}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                whileHover={{ scale: 1.02 }}
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover group-hover:brightness-75 transition-all duration-300"
+                  className="w-full h-full object-cover group-hover:brightness-50 transition-all duration-300"
                 />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40">
-                  <span className="text-white text-sm font-semibold">Click to View</span>
+                {/* Overlay with info */}
+                <div className="absolute inset-0 flex flex-col items-end justify-end p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/70 via-transparent to-transparent">
+                  <p className="text-white text-xs sm:text-sm font-semibold">{item.title}</p>
                 </div>
               </motion.button>
             ))}
