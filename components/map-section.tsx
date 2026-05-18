@@ -9,16 +9,26 @@ export default function MapSection() {
   const { getAnimationDuration } = useAnimationControls()
 
   return (
-    <section className="py-16 lg:py-24 bg-gray-50" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section 
+      className="py-16 lg:py-24 bg-cover bg-center relative"
+      style={{
+        backgroundImage: 'url(/celefuta-media.jpg)',
+        backgroundAttachment: 'fixed',
+      }}
+      ref={ref}
+    >
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/50"></div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: getAnimationDuration(0.6) }}
         >
-          <p className="text-xs uppercase tracking-widest text-gray-600 mb-2">Contact Us</p>
-          <h2 className="text-3xl lg:text-4xl font-serif font-bold text-navy-dark mb-4">
+          <p className="text-xs uppercase tracking-widest text-gray-300 mb-2">Contact Us</p>
+          <h2 className="text-3xl lg:text-4xl font-serif font-bold text-white mb-4">
             We look forward to worshipping with you! Locate our church with the map below.
           </h2>
         </motion.div>

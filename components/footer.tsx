@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Mail, MapPin, Phone, Facebook, Instagram, Youtube } from "lucide-react"
+import { Mail, MapPin, Phone, Facebook, Instagram, Youtube, Music } from "lucide-react"
 import { motion } from "framer-motion"
 import { useAnimationControls } from "@/hooks/use-animation-controls"
 
@@ -43,14 +43,9 @@ export default function Footer() {
           <motion.div variants={itemVariants}>
             <motion.div className="flex items-center gap-2 mb-4" whileHover={{ scale: 1.05 }}>
               <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
-                    <img
-              src="logo.png"
-              alt="Church Congregation"
-              className="w-full h-full object-cover"
-            />
-                <span className="text-gray-900 text-sm font-bold"></span>
+                <span className="text-gray-900 text-sm font-bold">CC</span>
               </div>
-              <span className="text-white font-semibold">CCCSP FUTA</span>
+              <span className="text-white font-semibold">CCCS FUTA</span>
             </motion.div>
             <p className="text-sm">
               Celestial Church of Christ Students' Parish FUTA. Serving the community with faith and fellowship.
@@ -113,6 +108,7 @@ export default function Footer() {
                 { icon: Facebook, label: "Facebook", href: "https://facebook.com" },
                 { icon: Instagram, label: "Instagram", href: "https://instagram.com" },
                 { icon: Youtube, label: "YouTube", href: "https://youtube.com" },
+                { icon: Music, label: "TikTok", href: "https://tiktok.com" },
               ].map((social) => (
                 <motion.li key={social.label} whileHover={{ scale: 1.1, x: 4 }}>
                   <a
